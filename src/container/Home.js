@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Link,Route,BrowserRouter as Router} from 'react-router-dom';
+import {Link,Route,Switch,Redirect} from 'react-router-dom';
 import All from './container2/All';
 import Give from './container2/Give';
 import Jinghua from './container2/Jinghua';
@@ -19,11 +19,15 @@ export default class Home extends Component {
               <Link to={`${url}/give`}class="all">招聘</Link>
           </div>
           <div>
-            <Route path={url+'/all'} component={All}/>
-            <Route path={url+'/jinghua'} component={Jinghua}/>
-            <Route path={url+'/share'} component={Share}/>
-            <Route path={url+'/request'} component={Request}/>
-            <Route path={url+'/give'} component={Give}/>
+            <Switch>
+              <Route path={url+'/all'} component={All}/>
+              <Route path={url+'/jinghua'} component={Jinghua}/>
+              <Route path={url+'/share'} component={Share}/>
+              <Route path={url+'/request'} component={Request}/>
+              <Route path={url+'/give'} component={Give}/>
+              <Redirect from ='/home' to="/home/all/1"></Redirect>
+            </Switch>
+            
           </div>
       </>
     )

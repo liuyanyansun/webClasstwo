@@ -10,8 +10,7 @@ export default function Header(){
                     <Link to='/start'>新手入门</Link>
                     <Link to='/api'>API</Link>
                     <Link to='/about'>关于</Link>
-                    <Link>注册</Link>
-                    <Link to='login'>登录</Link>
+                    <Link to='/login'>登录</Link>
                 </div>
             </header>
         </div>
